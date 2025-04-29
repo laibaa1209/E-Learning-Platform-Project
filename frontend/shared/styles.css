@@ -1,0 +1,542 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+
+/* Enhanced Pattern Background */
+.stApp {
+    background: 
+        linear-gradient(135deg, rgba(35,58,125,0.15) 25%, transparent 25%) -10px 0,
+        linear-gradient(225deg, rgba(35,58,125,0.15) 25%, transparent 25%) -10px 0,
+        linear-gradient(315deg, rgba(35,58,125,0.15) 25%, transparent 25%),
+        linear-gradient(45deg, rgba(35,58,125,0.15) 25%, transparent 25%);
+    background-size: 30px 30px;  /* Made pattern larger */
+    background-color: #1a1a1a !important;
+}
+
+/* Adjusted Background Overlay */
+.stApp::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(26,26,26,0.92) 0%, rgba(13,17,23,0.90) 100%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Sidebar Styles */
+section[data-testid="stSidebar"] {
+    background: linear-gradient(180deg, #233a7d 0%, #1a1a1a 100%);
+    border-right: 1px solid rgba(255,255,255,0.1);
+    z-index: 1;
+    width: 300px !important;
+}
+
+section[data-testid="stSidebar"] > div {
+    width: 300px !important;
+}
+
+.nav-btn, div[data-testid="stHorizontalBlock"] button[kind="secondary"] {
+    background: rgba(255,255,255,0.05) !important;
+    border: 1px solid rgba(255,255,255,0.1) !important;
+    border-radius: 1rem !important;
+    color: #fff !important;
+    font-weight: 500 !important;
+    transition: all 0.3s ease !important;
+    margin: 0.5rem 0 !important;
+    padding: 0.75rem 1.5rem !important;
+    position: relative !important;
+    overflow: hidden !important;
+    width: 100% !important;
+    min-width: 250px !important;
+}
+
+/* Style all buttons in the sidebar */
+section[data-testid="stSidebar"] button[kind="secondary"] {
+    width: 85% !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding: 1rem 1.5rem !important;
+    margin: 0.5rem auto !important;
+    font-size: 1.1rem !important;
+    display: block !important;
+}
+
+/* Center the button container */
+section[data-testid="stSidebar"] div[data-testid="element-container"] {
+    display: flex !important;
+    justify-content: center !important;
+    width: 100% !important;
+}
+
+/* Adjust sidebar container padding */
+section[data-testid="stSidebar"] > div:first-child {
+    padding: 1rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+}
+
+.sidebar-header {
+    background: rgba(255,255,255,0.05);
+    padding: 1.5rem 1rem;
+    border-radius: 0 0 2rem 2rem;
+    margin: 0 -1rem 2rem -1rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    width: calc(100% + 2rem);
+    text-align: center;
+}
+
+.sidebar-logo, .logo-placeholder {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin: 0 auto 1rem auto;
+    display: block;
+    border: 2px solid #42a5f5;
+    box-shadow: 0 0 15px #42a5f5;
+}
+
+.logo-placeholder {
+    background: linear-gradient(45deg, #233a7d, #42a5f5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: white;
+}
+
+.sidebar-title {
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 700;
+    background: linear-gradient(90deg, #42a5f5, #64b5f6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0.5rem 0;
+    letter-spacing: 1px;
+}
+
+.nav-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,0.2),
+        transparent
+    );
+    transition: 0.5s;
+}
+
+.nav-btn:hover::before {
+    left: 100%;
+}
+
+.nav-btn:hover {
+    background: rgba(66,165,245,0.2) !important;
+    box-shadow: 0 0 20px rgba(66,165,245,0.3) !important;
+    transform: translateY(-2px);
+}
+
+/* Main Content Styles */
+.main {
+    z-index: 1;
+}
+
+.hero-container {
+    background: linear-gradient(135deg, rgba(35,58,125,0.1) 0%, rgba(66,165,245,0.1) 100%);
+    border-radius: 2rem;
+    padding: 3rem 2rem;
+    margin: 1rem 0;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.hero-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #42a5f5, transparent);
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    background: linear-gradient(90deg, #fff, #42a5f5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.stat-container {
+    display: flex;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.stat-box {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    flex: 1;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.stat-box:hover {
+    transform: translateY(-5px);
+    background: rgba(66,165,245,0.1);
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #42a5f5;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    color: rgba(255,255,255,0.7);
+    font-size: 0.9rem;
+}
+
+/* Team Card Styles */
+.team-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 2rem;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    animation: cardGlow 3s ease-in-out infinite;
+}
+
+@keyframes cardGlow {
+    0% { box-shadow: 0 4px 15px rgba(66,165,245,0.1); }
+    50% { box-shadow: 0 4px 25px rgba(66,165,245,0.3); }
+    100% { box-shadow: 0 4px 15px rgba(66,165,245,0.1); }
+}
+
+.team-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,0.2),
+        transparent
+    );
+    animation: cardShine 3s infinite;
+}
+
+@keyframes cardShine {
+    0% { left: -100%; }
+    50% { left: 100%; }
+    100% { left: 100%; }
+}
+
+.member-name {
+    color: white;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    animation: nameGlow 3s ease-in-out infinite;
+}
+
+@keyframes nameGlow {
+    0% { text-shadow: 0 0 10px rgba(255,255,255,0.3); }
+    50% { text-shadow: 0 0 20px rgba(255,255,255,0.5); }
+    100% { text-shadow: 0 0 10px rgba(255,255,255,0.3); }
+}
+
+.member-role {
+    color: #42a5f5;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    animation: roleGlow 3s ease-in-out infinite;
+}
+
+@keyframes roleGlow {
+    0% { text-shadow: 0 0 10px rgba(66,165,245,0.3); }
+    50% { text-shadow: 0 0 20px rgba(66,165,245,0.5); }
+    100% { text-shadow: 0 0 10px rgba(66,165,245,0.3); }
+}
+
+.member-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.member-link {
+    color: #42a5f5;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    background: rgba(66, 165, 245, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.member-link:hover {
+    background: #42a5f5;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(66,165,245,0.3);
+}
+
+.member-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,0.3),
+        transparent
+    );
+    transition: 0.5s;
+}
+
+.member-link:hover::before {
+    left: 100%;
+}
+
+/* Header Section Styles */
+.header-section {
+    background: linear-gradient(135deg, rgba(35,58,125,0.1) 0%, rgba(66,165,245,0.1) 100%);
+    border-radius: 2rem;
+    padding: 3rem;
+    margin: 1rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 4px 24px rgba(66,165,245,0.1);
+    position: relative;
+    overflow: hidden;
+    gap: 3rem;
+}
+
+.search-content {
+    flex: 1.2;
+    padding-right: 1rem;
+}
+
+.e-learning-title {
+    font-size: 3.8rem;
+    font-weight: 800;
+    color: white;
+    text-shadow: 0 0 20px rgba(66,165,245,0.5);
+    margin-bottom: 0.5rem;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1px;
+    line-height: 1.1;
+}
+
+.platform-text {
+    font-size: 3.2rem;
+    font-weight: 800;
+    color: white;
+    text-shadow: 0 0 20px rgba(66,165,245,0.5);
+    margin-bottom: 1.5rem;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1px;
+    opacity: 0.9;
+}
+
+.search-title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.9);
+    margin-bottom: 2rem;
+    line-height: 1.2;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.search-container {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 50px;
+    padding: 0.8rem 1.5rem;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    max-width: 450px;
+    transition: all 0.3s ease;
+}
+
+.search-container:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(66,165,245,0.2);
+    border-color: rgba(66,165,245,0.3);
+}
+
+.search-input {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    color: #fff;
+    background: transparent;
+    padding: 0.5rem 0;
+}
+
+.search-input::placeholder {
+    color: rgba(255,255,255,0.5);
+}
+
+.search-button {
+    background: #42a5f5;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(66,165,245,0.3);
+}
+
+.search-button:hover {
+    background: #1976d2;
+    transform: scale(1.05);
+}
+
+.illustration-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    position: relative;
+    min-width: 300px;
+    max-width: 400px;
+}
+
+.floating-illustration {
+    width: 280px;
+    height: 280px;
+    object-fit: contain;
+    animation: float 3s ease-in-out infinite;
+    filter: drop-shadow(0 10px 20px rgba(66,165,245,0.2));
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Course Card Styles */
+.course-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 1.5rem;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 32px rgba(66, 165, 245, 0.2);
+    border-color: rgba(66, 165, 245, 0.3);
+}
+
+.course-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: #42a5f5;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.course-content {
+    padding: 1rem 0;
+}
+
+.course-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.course-description {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.course-meta {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.course-meta span {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Button Styles */
+.stButton > button {
+    background-color: rgba(66, 165, 245, 0.1) !important;
+    color: #fff !important;
+    border: 1px solid rgba(66, 165, 245, 0.2) !important;
+    border-radius: 8px !important;
+    padding: 10px 20px !important;
+    transition: all 0.3s ease !important;
+}
+
+.stButton > button:hover {
+    background-color: rgba(66, 165, 245, 0.2) !important;
+    box-shadow: 0 0 15px rgba(66, 165, 245, 0.5) !important;
+    transform: translateY(-2px);
+} 
