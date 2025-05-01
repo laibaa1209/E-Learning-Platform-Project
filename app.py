@@ -1,4 +1,11 @@
 import streamlit as st
+import sys
+from pathlib import Path
+
+# Add the frontend directory to the Python path
+frontend_dir = Path(__file__).parent / 'frontend'
+sys.path.append(str(frontend_dir))
+
 from frontend.shared.home import home_page
 from frontend.shared.login import login_page
 from frontend.shared.signup import signup_page
