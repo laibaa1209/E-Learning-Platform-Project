@@ -1,4 +1,4 @@
-# Beat The Deadline - E-Learning Platform
+# E-Learning Platform
 
 A modern e-learning platform built with Streamlit, designed to help students and teachers manage their learning journey effectively.
 
